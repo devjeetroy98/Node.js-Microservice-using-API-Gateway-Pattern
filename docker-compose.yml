@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  api-gateway:
+    container_name: api-gateway
+    build: "./api-gateway"
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - PRODUCTS_API_URL=http://products:3000
+      - PAYMENT_API_URL=http://payment:3000
+    networks:
+      - backend
+    depends_on:
+      - products-server
+      - payment-server
+
+  products-server:
+    container_name: products
+    build: "./products"
+    environment:
+      - PORT=3000
+    networks:
+      - backend
+
+  payment-server:
+    container_name: payment
+    build: "./payment"
+    environment:
+      - PORT=3000
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
