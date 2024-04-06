@@ -1,17 +1,14 @@
-import winston from "winston";
+import winston from "winston"
 
-const { combine, timestamp, json, prettyPrint } = winston.format
 const logger = winston.createLogger({
-    level: "debug",
-    format: combine(
-        timestamp(),
-        json(),
-        prettyPrint()
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
     ),
     transports: [
         new winston.transports.Console(),
-        new winston.transports.File({ filename: "logs/app.log" })
+        new winston.transports.File({ filename: 'logs/app.log' })
     ]
 })
 
-export default logger;
+export default logger
