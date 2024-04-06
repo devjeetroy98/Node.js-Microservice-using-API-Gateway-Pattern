@@ -1,6 +1,42 @@
 version: '3'
 
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.0
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+  payment-filebeat:
+    build:
+      context: ./payment-filebeat
+    container_name: payment-filebeat
+    command: filebeat -e -strict.perms=false
+    volumes:
+      - ./payment/logs:/src/logs
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  products-filebeat:
+    build:
+      context: ./products-filebeat
+    container_name: products-filebeat
+    command: filebeat -e -strict.perms=false
+    volumes:
+      - ./products/logs:/src/logs
+    depends_on:
+      - elasticsearch
+      - kibana
+
   api-gateway:
     container_name: api-gateway
     build: "./api-gateway"
@@ -13,25 +49,37 @@ services:
     networks:
       - backend
     depends_on:
-      - products-server
-      - payment-server
+      - products
+      - payment
 
-  products-server:
+  products:
     container_name: products
     build: "./products"
     environment:
       - PORT=3000
     networks:
       - backend
+    volumes:
+      - ./products/logs:/myapp/logs
+    depends_on:
+      - elasticsearch
 
-  payment-server:
+  payment:
     container_name: payment
     build: "./payment"
     environment:
       - PORT=3000
     networks:
       - backend
+    volumes:
+      - ./payment/logs:/myapp/logs
+    depends_on:
+      - elasticsearch
 
 networks:
   backend:
     driver: bridge
+
+volumes:
+  elasticsearch_data:
+    driver: local

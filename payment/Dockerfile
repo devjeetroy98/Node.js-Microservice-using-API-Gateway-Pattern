@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /usr/payment
+WORKDIR /myapp
 COPY package*.json ./
 RUN npm install 
 COPY . . 
