@@ -15,24 +15,14 @@ services:
     depends_on:
       - elasticsearch
 
-  payment-filebeat:
+  filebeat:
     build:
-      context: ./payment-filebeat
-    container_name: payment-filebeat
+      context: ./filebeat
+    container_name: filebeat
     command: filebeat -e -strict.perms=false
     volumes:
-      - ./payment/logs:/src/logs
-    depends_on:
-      - elasticsearch
-      - kibana
-
-  products-filebeat:
-    build:
-      context: ./products-filebeat
-    container_name: products-filebeat
-    command: filebeat -e -strict.perms=false
-    volumes:
-      - ./products/logs:/src/logs
+      - ./payment/logs:/src/payment/logs
+      - ./products/logs:/src/products/logs
     depends_on:
       - elasticsearch
       - kibana

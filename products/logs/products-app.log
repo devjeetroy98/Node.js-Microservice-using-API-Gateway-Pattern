@@ -1,0 +1,2 @@
+{"durationMs":483,"level":"info","message":"[ProductService] Request to /success processed.","timestamp":"2024-04-06T19:16:11.728Z"}
+{"level":"error","message":"[ProductService] Request to /failure failed.","timestamp":"2024-04-06T19:16:14.361Z"}

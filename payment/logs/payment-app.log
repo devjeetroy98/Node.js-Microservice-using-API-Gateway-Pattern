@@ -1,0 +1,6 @@
+{"durationMs":377,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-06T19:16:05.437Z"}
+{"level":"error","message":"[PaymentService] Request to /failure failed.","timestamp":"2024-04-06T19:16:08.560Z"}
+{"durationMs":333,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-06T19:17:24.209Z"}
+{"durationMs":333,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-06T19:18:59.450Z"}
+{"durationMs":335,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-06T19:19:00.279Z"}
+{"durationMs":333,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-06T19:19:01.187Z"}

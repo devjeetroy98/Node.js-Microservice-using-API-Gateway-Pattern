@@ -1,4 +1,4 @@
-name: "products-filebeat"
+name: "filebeat"
 logging.metrics.enabled: false
 xpack.security.enabled: false
 xpack.monitoring.enabled: false
@@ -10,9 +10,9 @@ filebeat.inputs:
     scan_frequency: 1s
     enabled: true
     paths:
-      - /src/logs/*.log
+      - /src/*/logs/*.log
     fields:
-      - service: products
+      - service: filebeat
     fields_under_root: true
     json:
       keys_under_root: true
@@ -21,4 +21,4 @@ filebeat.inputs:
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]
-  index: "products"
+  index: "filebeat"
