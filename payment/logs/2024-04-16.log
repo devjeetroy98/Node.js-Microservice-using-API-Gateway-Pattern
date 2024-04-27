@@ -1,2 +1,0 @@
-{"durationMs":345,"level":"info","message":"[PaymentService] Request to /success processed.","timestamp":"2024-04-16T16:26:24.934Z"}
-{"level":"error","message":"[PaymentService] Request to /failure failed.","timestamp":"2024-04-16T16:26:27.088Z"}
