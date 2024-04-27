@@ -1,16 +1,16 @@
-Elasticsearch: Elasticsearch is a distributed, RESTful search and analytics engine built on top of Apache Lucene. It provides a scalable and near real-time search platform with powerful full-text search capabilities, as well as support for aggregations and analytics. Elasticsearch is commonly used for log and event data analysis, application search, and various other use cases that require high-performance searching and indexing capabilities.
+*Elasticsearch*: Elasticsearch is a distributed, RESTful search and analytics engine built on top of Apache Lucene. It provides a scalable and near real-time search platform with powerful full-text search capabilities, as well as support for aggregations and analytics. Elasticsearch is commonly used for log and event data analysis, application search, and various other use cases that require high-performance searching and indexing capabilities.
 
-Logstash: Logstash is a flexible, server-side data processing pipeline that ingests, processes, and forwards data to various outputs, including Elasticsearch. Logstash supports multiple input sources, such as log files, databases, and message queues, and can transform and enrich data using filters before forwarding it. Logstash is often used to collect and normalize logs and events from various sources, making it easier to analyze and visualize the data in Elasticsearch.
+*Logstash*: Logstash is a flexible, server-side data processing pipeline that ingests, processes, and forwards data to various outputs, including Elasticsearch. Logstash supports multiple input sources, such as log files, databases, and message queues, and can transform and enrich data using filters before forwarding it. Logstash is often used to collect and normalize logs and events from various sources, making it easier to analyze and visualize the data in Elasticsearch.
 
-Kibana: Kibana is a web-based data visualization and exploration tool that provides a user interface for interacting with Elasticsearch data. Kibana offers various visualization types, such as bar charts, line charts, pie charts, and maps, as well as support for creating custom dashboards to display and analyze data. Kibana also includes features such as Dev Tools for Elasticsearch query testing, monitoring, and alerting capabilities, and machine learning integration.
+*Kibana*: Kibana is a web-based data visualization and exploration tool that provides a user interface for interacting with Elasticsearch data. Kibana offers various visualization types, such as bar charts, line charts, pie charts, and maps, as well as support for creating custom dashboards to display and analyze data. Kibana also includes features such as Dev Tools for Elasticsearch query testing, monitoring, and alerting capabilities, and machine learning integration.
 
-Filebeat: Filebeat is a logging agent installed on the machine generating the log files, tailing them, and forwarding the data to either Logstash for more advanced processing or directly into Elasticsearch for indexing.
+*Filebeat*: Filebeat is a logging agent installed on the machine generating the log files, tailing them, and forwarding the data to either Logstash for more advanced processing or directly into Elasticsearch for indexing.
 
-Prometheus: Prometheus is an open source monitoring solution written in Go that collects metrics data and stores that data in a time series database. It was originally built by SoundCloud in 2012 and became part of the Cloud Native Computing Foundation (CNCF) in 2016. It uses PromQL, a powerful query language for querying your time series data.
+*Prometheus*: Prometheus is an open source monitoring solution written in Go that collects metrics data and stores that data in a time series database. It was originally built by SoundCloud in 2012 and became part of the Cloud Native Computing Foundation (CNCF) in 2016. It uses PromQL, a powerful query language for querying your time series data.
 
-Grafana: Grafana is an open-source analytics and interactive visualization web application used for monitoring application performance. It allows users to ingest data from a wide range of sources, query and display it in customizable charts, set alerts for abnormal behavior, and visualize data on dashboards.
+*Grafana*: Grafana is an open-source analytics and interactive visualization web application used for monitoring application performance. It allows users to ingest data from a wide range of sources, query and display it in customizable charts, set alerts for abnormal behavior, and visualize data on dashboards.
 
-Process to setup Central Log Management using ELK Stack
+# Process to setup Central Log Management using ELK Stack
 
 1. First up the ELK and application containers using "docker compose up"
 2. Hit the endpoints 4 endpoints of 2 microservices using the api-gateway.
@@ -31,7 +31,7 @@ Failure: http://localhost:3000/payments/failure/
 6. Click on "Create Index Pattern" and hence create the index pattern with "name" & "@timestamp".
 7. In Kibana, go to "Discover" under "Analytics" and check your logs. You can also select specific fields from left pane.
 
-Process to setup Container Monitoring & Container Host Monitoring using Prometheus, Grafana, Node Exporter & CAdvisor
+# Process to setup Container Monitoring & Container Host Monitoring using Prometheus, Grafana, Node Exporter & CAdvisor
 
 1. Go to "http://localhost:9090/" and check if your Prometheus container is running.
 2. Go to "http://localhost:4090/" and check if you can see Grafana login screen.
