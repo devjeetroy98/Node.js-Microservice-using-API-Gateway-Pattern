@@ -1,3 +1,5 @@
+# What are Elasticsearch, Logstash, Kibana & Filebeat ?
+
 *Elasticsearch*: Elasticsearch is a distributed, RESTful search and analytics engine built on top of Apache Lucene. It provides a scalable and near real-time search platform with powerful full-text search capabilities, as well as support for aggregations and analytics. Elasticsearch is commonly used for log and event data analysis, application search, and various other use cases that require high-performance searching and indexing capabilities.
 
 *Logstash*: Logstash is a flexible, server-side data processing pipeline that ingests, processes, and forwards data to various outputs, including Elasticsearch. Logstash supports multiple input sources, such as log files, databases, and message queues, and can transform and enrich data using filters before forwarding it. Logstash is often used to collect and normalize logs and events from various sources, making it easier to analyze and visualize the data in Elasticsearch.
@@ -5,6 +7,8 @@
 *Kibana*: Kibana is a web-based data visualization and exploration tool that provides a user interface for interacting with Elasticsearch data. Kibana offers various visualization types, such as bar charts, line charts, pie charts, and maps, as well as support for creating custom dashboards to display and analyze data. Kibana also includes features such as Dev Tools for Elasticsearch query testing, monitoring, and alerting capabilities, and machine learning integration.
 
 *Filebeat*: Filebeat is a logging agent installed on the machine generating the log files, tailing them, and forwarding the data to either Logstash for more advanced processing or directly into Elasticsearch for indexing.
+
+# What are Prometheus and Grafana ?
 
 *Prometheus*: Prometheus is an open source monitoring solution written in Go that collects metrics data and stores that data in a time series database. It was originally built by SoundCloud in 2012 and became part of the Cloud Native Computing Foundation (CNCF) in 2016. It uses PromQL, a powerful query language for querying your time series data.
 
